@@ -53,7 +53,7 @@ export interface Project {
   methodology: string[];
   results: string;
   tools: string[];
-  members: string[];
+  members?: string[];
   mentor?: string;
   githubUrl?: string;
   reportUrl?: string;

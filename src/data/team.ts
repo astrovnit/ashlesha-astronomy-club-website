@@ -14,7 +14,7 @@ const make = (
   name: "Member Name (placeholder)",
   role,
   group,
-  domain,
+  ...(domain ? { domain } : {}),
   batch: "Batch TBD",
   department: "Department TBD",
   bio: "Short placeholder bio. Replace with a one-line introduction covering interests within astronomy and the member's contribution to the club.",
