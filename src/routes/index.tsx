@@ -35,12 +35,36 @@ export const Route = createFileRoute("/")({
 });
 
 const pillars = [
-  { key: "01", title: "Observe", body: "Telescope sessions, sky navigation and long observation nights." },
-  { key: "02", title: "Explore", body: "Astrophysics, cosmology and the phenomena behind what we see." },
-  { key: "03", title: "Build", body: "Amateur rocketry, instrumentation and space-technology projects." },
-  { key: "04", title: "Research", body: "Computational astronomy and project work that goes past the syllabus." },
-  { key: "05", title: "Create", body: "Astrophotography, writing and visual explanation of hard ideas." },
-  { key: "06", title: "Connect", body: "Talks, workshops, outreach and a community that keeps asking why." },
+  {
+    key: "01",
+    title: "Observe",
+    body: "Telescope sessions, sky navigation and long observation nights.",
+  },
+  {
+    key: "02",
+    title: "Explore",
+    body: "Astrophysics, cosmology and the phenomena behind what we see.",
+  },
+  {
+    key: "03",
+    title: "Build",
+    body: "Amateur rocketry, instrumentation and space-technology projects.",
+  },
+  {
+    key: "04",
+    title: "Research",
+    body: "Computational astronomy and project work that goes past the syllabus.",
+  },
+  {
+    key: "05",
+    title: "Create",
+    body: "Astrophotography, writing and visual explanation of hard ideas.",
+  },
+  {
+    key: "06",
+    title: "Connect",
+    body: "Talks, workshops, outreach and a community that keeps asking why.",
+  },
 ];
 
 const reasons = [
@@ -77,7 +101,9 @@ function Home() {
         />
         <div className="relative mx-auto w-full max-w-7xl px-5 pt-32 pb-24 lg:px-8">
           <Reveal>
-            <p className="eyebrow text-foreground/70">Visvesvaraya National Institute of Technology, Nagpur</p>
+            <p className="eyebrow text-foreground/70">
+              Visvesvaraya National Institute of Technology, Nagpur
+            </p>
           </Reveal>
           <Reveal delay={80}>
             <h1 className="mt-6 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-tight text-balance sm:text-7xl lg:text-8xl">
@@ -144,7 +170,10 @@ function Home() {
                 investigating. Some arrive knowing the constellations. Most arrive knowing nothing
                 at all. Both are the right starting point.
               </p>
-              <Link to="/about" className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline">
+              <Link
+                to="/about"
+                className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline"
+              >
                 Read more about AAC <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
@@ -182,7 +211,10 @@ function Home() {
           title="Upcoming events"
           description="Observation nights, workshops and talks. Placeholder listings until the semester calendar is confirmed."
           action={
-            <Link to="/events" className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline">
+            <Link
+              to="/events"
+              className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline"
+            >
               View all events <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           }
@@ -204,7 +236,10 @@ function Home() {
             title="Featured projects"
             description="Astronomy here includes code, hardware and data — not only eyepieces."
             action={
-              <Link to="/projects" className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline">
+              <Link
+                to="/projects"
+                className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline"
+              >
                 Explore all projects <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             }
@@ -225,7 +260,10 @@ function Home() {
           eyebrow="Archive"
           title="From the gallery"
           action={
-            <Link to="/gallery" className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline">
+            <Link
+              to="/gallery"
+              className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline"
+            >
               Open the gallery <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           }
@@ -262,7 +300,10 @@ function Home() {
             title="From the notebook"
             description="Explainers, guides and research notes written by members."
             action={
-              <Link to="/blogs" className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline">
+              <Link
+                to="/blogs"
+                className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline"
+              >
                 All articles <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             }
@@ -279,7 +320,10 @@ function Home() {
 
       {/* WHY JOIN */}
       <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-        <SectionHeading eyebrow="Why join" title={`Six reasons to become an ${site.memberNickname.slice(0, -1)}`} />
+        <SectionHeading
+          eyebrow="Why join"
+          title={`Six reasons to become an ${site.memberNickname.slice(0, -1)}`}
+        />
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {reasons.map((r, i) => (
             <Reveal key={r.title} delay={i * 60}>
@@ -309,7 +353,11 @@ function Home() {
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover opacity-30"
         />
-        <div aria-hidden="true" className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{ background: "var(--gradient-hero)" }}
+        />
         <div className="relative mx-auto max-w-3xl px-5 py-28 text-center lg:px-8">
           <Reveal>
             <h2 className="text-4xl leading-tight font-semibold text-balance sm:text-5xl">

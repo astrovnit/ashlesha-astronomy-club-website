@@ -12,7 +12,9 @@ export const Route = createFileRoute("/projects/$slug")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Project not found — AAC" }, { name: "robots", content: "noindex" }] };
+      return {
+        meta: [{ title: "Project not found — AAC" }, { name: "robots", content: "noindex" }],
+      };
     }
     const { project } = loaderData;
     return {
@@ -38,7 +40,10 @@ function ProjectDetail() {
   return (
     <article className="pt-28">
       <div className="mx-auto max-w-5xl px-5 py-12 lg:px-8">
-        <Link to="/projects" className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm">
+        <Link
+          to="/projects"
+          className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm"
+        >
           <ArrowLeft className="h-4 w-4" aria-hidden="true" /> All projects
         </Link>
 
@@ -51,7 +56,9 @@ function ProjectDetail() {
         <h1 className="mt-5 text-4xl leading-tight font-semibold text-balance sm:text-5xl">
           {project.title}
         </h1>
-        <p className="text-muted-foreground mt-5 max-w-2xl text-lg leading-relaxed">{project.excerpt}</p>
+        <p className="text-muted-foreground mt-5 max-w-2xl text-lg leading-relaxed">
+          {project.excerpt}
+        </p>
 
         <img
           src={project.image}
@@ -73,7 +80,9 @@ function ProjectDetail() {
               <ol className="text-muted-foreground mt-4 space-y-3 text-sm leading-relaxed">
                 {project.methodology.map((m, i) => (
                   <li key={m} className="flex gap-4">
-                    <span className="text-accent font-mono text-xs">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-accent font-mono text-xs">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     <span>{m}</span>
                   </li>
                 ))}
@@ -90,7 +99,10 @@ function ProjectDetail() {
               <h2 className="eyebrow mb-2">Tools & topics</h2>
               <ul className="flex flex-wrap gap-1.5">
                 {project.tools.map((t) => (
-                  <li key={t} className="bg-secondary text-secondary-foreground rounded px-2 py-0.5 text-[11px]">
+                  <li
+                    key={t}
+                    className="bg-secondary text-secondary-foreground rounded px-2 py-0.5 text-[11px]"
+                  >
                     {t}
                   </li>
                 ))}

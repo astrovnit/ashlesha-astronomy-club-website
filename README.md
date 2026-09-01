@@ -8,12 +8,12 @@ This should feel like the official website of a serious university astronomy and
 
 The website should combine:
 
-* the visual/immersive quality of a modern astronomy website,
-* the educational and community-oriented structure of IIT Kanpur Astronomy Club,
-* the photography + projects + APOD approach of Krittika, IIT Bombay,
-* and the comprehensive organization/content structure of NISER Astronomy Club.
+- the visual/immersive quality of a modern astronomy website,
+- the educational and community-oriented structure of IIT Kanpur Astronomy Club,
+- the photography + projects + APOD approach of Krittika, IIT Bombay,
+- and the comprehensive organization/content structure of NISER Astronomy Club.
 
-**IMPORTANT:** Take these websites as *design and information-architecture references only*. Do NOT copy their layouts, text, branding, illustrations, code, or exact visual design. Create an original identity for AAC.
+**IMPORTANT:** Take these websites as _design and information-architecture references only_. Do NOT copy their layouts, text, branding, illustrations, code, or exact visual design. Create an original identity for AAC.
 
 ---
 
@@ -27,13 +27,13 @@ https://wiki.astroclubiitk.in/
 
 Reference qualities:
 
-* strong astronomy identity
-* educational/community focus
-* blogs and knowledge resources
-* projects
-* astronomy guides/resources
-* welcoming language
-* a sense that the club is a community rather than simply an event organization
+- strong astronomy identity
+- educational/community focus
+- blogs and knowledge resources
+- projects
+- astronomy guides/resources
+- welcoming language
+- a sense that the club is a community rather than simply an event organization
 
 ### Krittika — Astronomy Club, IIT Bombay
 
@@ -44,16 +44,16 @@ https://tech-iitb.org/bodies/Krittika/
 
 Reference qualities:
 
-* beautiful astronomy imagery
-* astrophotography
-* prominent Astronomy Picture of the Day
-* projects
-* observational astronomy
-* events
-* computational astronomy
-* trips/outreach
-* clean navigation
-* strong visual storytelling
+- beautiful astronomy imagery
+- astrophotography
+- prominent Astronomy Picture of the Day
+- projects
+- observational astronomy
+- events
+- computational astronomy
+- trips/outreach
+- clean navigation
+- strong visual storytelling
 
 ### NISER Astronomy Club
 
@@ -61,16 +61,16 @@ https://astroclub-niser.github.io/
 
 Reference qualities:
 
-* clear club identity
-* astronomy activities
-* equipment/observatory information
-* astrophotography
-* events
-* newsletter/magazine
-* team structure
-* outreach
-* contact information
-* educational resources
+- clear club identity
+- astronomy activities
+- equipment/observatory information
+- astrophotography
+- events
+- newsletter/magazine
+- team structure
+- outreach
+- contact information
+- educational resources
 
 Again: **use these websites to understand what makes a good university astronomy-club website, but create a completely original AAC design.**
 
@@ -85,16 +85,16 @@ The website should establish AAC as:
 
 AAC is a community for students interested in:
 
-* Astronomy
-* Astrophysics
-* Cosmology
-* Observational Astronomy
-* Astrophotography
-* Space Science
-* Computational Astronomy
-* Research
-* Amateur Rocketry
-* Space technology
+- Astronomy
+- Astrophysics
+- Cosmology
+- Observational Astronomy
+- Astrophotography
+- Space Science
+- Computational Astronomy
+- Research
+- Amateur Rocketry
+- Space technology
 
 The club should feel like a place where someone can go from:
 
@@ -116,32 +116,32 @@ The website should communicate that astronomy at AAC is not limited to lectures 
 
 Create something that feels:
 
-* cinematic
-* scientific
-* futuristic
-* elegant
-* minimal
-* intellectually curious
-* immersive
-* sophisticated
-* slightly mysterious
+- cinematic
+- scientific
+- futuristic
+- elegant
+- minimal
+- intellectually curious
+- immersive
+- sophisticated
+- slightly mysterious
 
 Avoid making it look like:
 
-* a generic Bootstrap college website
-* a template with random planets everywhere
-* an overly childish "space theme"
-* a gaming website
-* a corporate SaaS website
+- a generic Bootstrap college website
+- a template with random planets everywhere
+- an overly childish "space theme"
+- a gaming website
+- a corporate SaaS website
 
 Avoid excessive:
 
-* stars everywhere
-* glowing neon gradients
-* cartoon planets
-* rocket emojis
-* cheesy space slogans
-* unnecessary animations
+- stars everywhere
+- glowing neon gradients
+- cartoon planets
+- rocket emojis
+- cheesy space slogans
+- unnecessary animations
 
 The website should feel like **a portal into astronomy**, not a space-themed template.
 
@@ -165,12 +165,12 @@ The primary visual experience should be dark.
 
 Use:
 
-* deep near-black / midnight blue backgrounds
-* subtle astronomical textures
-* muted celestial gradients
-* white/off-white typography
-* restrained accent colors
-* subtle blue/purple/cosmic accents where appropriate
+- deep near-black / midnight blue backgrounds
+- subtle astronomical textures
+- muted celestial gradients
+- white/off-white typography
+- restrained accent colors
+- subtle blue/purple/cosmic accents where appropriate
 
 Do NOT overuse bright colors.
 
@@ -182,9 +182,9 @@ Do not simply invert colors.
 
 Light mode should feel like:
 
-* clean scientific publication
-* observatory/research journal
-* warm daylight sky
+- clean scientific publication
+- observatory/research journal
+- warm daylight sky
 
 The two themes should both look intentionally designed.
 
@@ -203,13 +203,13 @@ or an elegant animated sun/moon icon.
 
 Requirements:
 
-* one click switches between dark and light
-* smooth transition
-* remember the user's preference using localStorage
-* respect the user's system preference on first visit
-* icon changes depending on current theme
-* accessible keyboard interaction
-* no page reload
+- one click switches between dark and light
+- smooth transition
+- remember the user's preference using localStorage
+- respect the user's system preference on first visit
+- icon changes depending on current theme
+- accessible keyboard interaction
+- no page reload
 
 The transition should feel polished.
 
@@ -235,9 +235,9 @@ The navbar should become slightly more compact / translucent when scrolling.
 
 On mobile:
 
-* hamburger menu
-* smooth opening animation
-* theme toggle remains easily accessible
+- hamburger menu
+- smooth opening animation
+- theme toggle remains easily accessible
 
 ---
 
@@ -257,11 +257,11 @@ Use a high-quality astronomical image/video background or a sophisticated animat
 
 Possible visual concepts:
 
-* Milky Way
-* deep-space image
-* night sky over an observatory/campus
-* subtle starfield
-* astronomical photograph
+- Milky Way
+- deep-space image
+- night sky over an observatory/campus
+- subtle starfield
+- astronomical photograph
 
 Do not use a cheesy stock image.
 
@@ -352,11 +352,11 @@ Large astronomical image/video.
 
 Show:
 
-* title
-* date
-* NASA credit
-* short explanation
-* "Learn More" / NASA link
+- title
+- date
+- NASA credit
+- short explanation
+- "Learn More" / NASA link
 
 The content should automatically update based on NASA's current APOD.
 
@@ -367,14 +367,14 @@ Add:
 
 Important:
 
-* API call should happen dynamically
-* do not hard-code today's APOD
-* add loading state
-* add graceful error state
-* handle missing image/video
-* cache the result appropriately
-* do not expose any private API key
-* structure the API integration so the NASA API key can later be moved to an environment variable
+- API call should happen dynamically
+- do not hard-code today's APOD
+- add loading state
+- add graceful error state
+- handle missing image/video
+- cache the result appropriately
+- do not expose any private API key
+- structure the API integration so the NASA API key can later be moved to an environment variable
 
 Make this section one of the visual highlights of the homepage.
 
@@ -386,24 +386,24 @@ Create a homepage section for upcoming events.
 
 Display:
 
-* event image
-* event name
-* date
-* time
-* location
-* short description
-* registration button if applicable
+- event image
+- event name
+- date
+- time
+- location
+- short description
+- registration button if applicable
 
 Example categories:
 
-* Stargazing
-* Talks
-* Workshops
-* Astronomy quizzes
-* Astrophotography
-* Space-tech sessions
-* Competitions
-* Club activities
+- Stargazing
+- Talks
+- Workshops
+- Astronomy quizzes
+- Astrophotography
+- Space-tech sessions
+- Competitions
+- Club activities
 
 Have a:
 
@@ -453,13 +453,13 @@ Projects at the intersection of astronomy, engineering and technology.
 
 Use project cards with:
 
-* title
-* category
-* year
-* short description
-* technologies/topics
-* image
-* "Read More"
+- title
+- category
+- year
+- short description
+- technologies/topics
+- image
+- "Read More"
 
 Add:
 
@@ -483,13 +483,13 @@ Use the publicly available description of AAC as a starting point, but rewrite i
 
 The existing public description emphasizes:
 
-* overnight stargazing
-* astronomy
-* cosmology
-* astrophysics
-* projects
-* engineering/management skills
-* space exploration
+- overnight stargazing
+- astronomy
+- cosmology
+- astrophysics
+- projects
+- engineering/management skills
+- space exploration
 
 Build upon these ideas rather than simply copying the old wording.
 
@@ -533,36 +533,36 @@ Create a dedicated Events page.
 
 Include:
 
-* upcoming events
-* ongoing events
-* past events
+- upcoming events
+- ongoing events
+- past events
 
 Add filtering by:
 
-* Stargazing
-* Workshop
-* Talk
-* Competition
-* Outreach
-* Astrophotography
-* Space Technology
-* Other
+- Stargazing
+- Workshop
+- Talk
+- Competition
+- Outreach
+- Astrophotography
+- Space Technology
+- Other
 
 Each event should have its own detailed page.
 
 Event detail page should support:
 
-* event title
-* hero image
-* date
-* time
-* venue
-* description
-* speakers
-* registration
-* gallery
-* event report
-* related projects/blogs
+- event title
+- hero image
+- date
+- time
+- venue
+- description
+- speakers
+- registration
+- gallery
+- event report
+- related projects/blogs
 
 ---
 
@@ -574,38 +574,38 @@ This should take some inspiration from IIT Kanpur's knowledge-oriented approach.
 
 Categories:
 
-* Astronomy
-* Astrophysics
-* Cosmology
-* Space Science
-* Observational Astronomy
-* Astrophotography
-* Space Technology
-* Research
-* Beginner's Guide
-* Club Updates
+- Astronomy
+- Astrophysics
+- Cosmology
+- Space Science
+- Observational Astronomy
+- Astrophotography
+- Space Technology
+- Research
+- Beginner's Guide
+- Club Updates
 
 Blog cards should display:
 
-* cover image
-* title
-* category
-* author
-* date
-* reading time
-* short excerpt
+- cover image
+- title
+- category
+- author
+- date
+- reading time
+- short excerpt
 
 Create an elegant article reading page.
 
 Include:
 
-* large title
-* author
-* date
-* cover image
-* article body
-* related articles
-* share buttons
+- large title
+- author
+- date
+- cover image
+- article body
+- related articles
+- share buttons
 
 Design this like a **scientific magazine**, not a generic blog.
 
@@ -619,14 +619,14 @@ This is especially important for an astronomy club.
 
 Include:
 
-* astrophotography
-* stargazing sessions
-* telescope observations
-* events
-* workshops
-* team moments
-* campus night sky
-* space/astronomy visuals
+- astrophotography
+- stargazing sessions
+- telescope observations
+- events
+- workshops
+- team moments
+- campus night sky
+- space/astronomy visuals
 
 Use a modern masonry/grid layout.
 
@@ -634,18 +634,18 @@ Clicking an image should open a beautiful lightbox.
 
 Include filters:
 
-* Astrophotography
-* Events
-* Stargazing
-* Projects
-* Team
+- Astrophotography
+- Events
+- Stargazing
+- Projects
+- Team
 
 Each image should support:
 
-* title
-* photographer
-* date
-* description/credit
+- title
+- photographer
+- date
+- description/credit
 
 Make the gallery feel like an **astronomical archive**.
 
@@ -659,13 +659,13 @@ Use professional profile cards.
 
 Each member should have:
 
-* portrait
-* name
-* role
-* year/batch
-* department
-* short bio
-* optional social links
+- portrait
+- name
+- role
+- year/batch
+- department
+- short bio
+- optional social links
 
 Organize into:
 
@@ -702,20 +702,20 @@ Create a dedicated Projects archive.
 
 Every project should have:
 
-* title
-* project category
-* year
-* team members
-* mentor, if applicable
-* description
-* objective
-* methodology
-* technologies/tools
-* results
-* images
-* GitHub link
-* report/PDF link
-* related blogs
+- title
+- project category
+- year
+- team members
+- mentor, if applicable
+- description
+- objective
+- methodology
+- technologies/tools
+- results
+- images
+- GitHub link
+- report/PDF link
+- related blogs
 
 Include filters and search.
 
@@ -746,10 +746,10 @@ Email:
 
 Also include:
 
-* Instagram
-* X
-* Facebook
-* other social links when available
+- Instagram
+- X
+- Facebook
+- other social links when available
 
 Include a contact form:
 
@@ -848,22 +848,22 @@ Use animation carefully.
 
 Desired animations:
 
-* smooth page transitions
-* fade/slide reveals while scrolling
-* subtle image parallax
-* hover effects
-* card elevation
-* navigation transitions
-* theme transition
-* animated starfield where appropriate
-* subtle cursor interactions on desktop
+- smooth page transitions
+- fade/slide reveals while scrolling
+- subtle image parallax
+- hover effects
+- card elevation
+- navigation transitions
+- theme transition
+- animated starfield where appropriate
+- subtle cursor interactions on desktop
 
 Avoid:
 
-* excessive spinning planets
-* distracting animations
-* huge particle effects
-* slow page loading
+- excessive spinning planets
+- distracting animations
+- huge particle effects
+- slow page loading
 
 The website should feel **alive but fast**.
 
@@ -875,13 +875,13 @@ Add subtle astronomy-inspired interactions.
 
 For example:
 
-* constellation line patterns
-* subtle star maps
-* celestial coordinate inspired UI details
-* orbital curves
-* astronomical symbols
-* subtle grid overlays
-* moon phases as decorative elements
+- constellation line patterns
+- subtle star maps
+- celestial coordinate inspired UI details
+- orbital curves
+- astronomical symbols
+- subtle grid overlays
+- moon phases as decorative elements
 
 But keep these restrained.
 
@@ -897,10 +897,10 @@ Use one strong display font for headings and one highly readable font for body t
 
 Potential combinations:
 
-* Space Grotesk + Inter
-* Sora + Inter
-* DM Sans + Space Grotesk
-* another comparable modern pairing
+- Space Grotesk + Inter
+- Sora + Inter
+- DM Sans + Space Grotesk
+- another comparable modern pairing
 
 Typography should feel:
 **scientific + editorial + modern**
@@ -913,10 +913,10 @@ not gaming/futuristic.
 
 The website MUST be excellent on:
 
-* desktop
-* laptop
-* tablet
-* mobile
+- desktop
+- laptop
+- tablet
+- mobile
 
 Do not simply shrink the desktop website.
 
@@ -924,13 +924,13 @@ Design mobile layouts intentionally.
 
 Pay special attention to:
 
-* hero
-* navigation
-* APOD
-* project cards
-* gallery
-* team
-* event cards
+- hero
+- navigation
+- APOD
+- project cards
+- gallery
+- team
+- event cards
 
 ---
 
@@ -940,14 +940,14 @@ Keep the website fast.
 
 Requirements:
 
-* lazy-load images
-* optimize large astronomical photographs
-* use responsive images
-* avoid unnecessarily large videos
-* minimize JavaScript where possible
-* avoid excessive third-party libraries
-* optimize animations
-* use modern image formats where possible
+- lazy-load images
+- optimize large astronomical photographs
+- use responsive images
+- avoid unnecessarily large videos
+- minimize JavaScript where possible
+- avoid excessive third-party libraries
+- optimize animations
+- use modern image formats where possible
 
 The website should still feel fast on average Indian mobile internet.
 
@@ -957,15 +957,15 @@ The website should still feel fast on average Indian mobile internet.
 
 Implement:
 
-* semantic HTML
-* proper heading hierarchy
-* alt text
-* keyboard navigation
-* visible focus states
-* accessible buttons
-* sufficient contrast
-* aria labels where needed
-* reduced-motion support
+- semantic HTML
+- proper heading hierarchy
+- alt text
+- keyboard navigation
+- visible focus states
+- accessible buttons
+- sufficient contrast
+- aria labels where needed
+- reduced-motion support
 
 Theme toggle must be accessible.
 
@@ -985,11 +985,11 @@ Astronomy, astrophysics, cosmology, observational astronomy, astrophotography, r
 
 Add:
 
-* Open Graph metadata
-* Twitter/X metadata
-* favicon
-* sitemap-ready structure
-* clean URLs
+- Open Graph metadata
+- Twitter/X metadata
+- favicon
+- sitemap-ready structure
+- clean URLs
 
 Example URLs:
 
@@ -1019,26 +1019,26 @@ Use a component-based architecture.
 
 Use reusable components for:
 
-* Navbar
-* Footer
-* EventCard
-* ProjectCard
-* BlogCard
-* TeamCard
-* GalleryCard
-* SectionHeading
-* ThemeToggle
-* APOD component
+- Navbar
+- Footer
+- EventCard
+- ProjectCard
+- BlogCard
+- TeamCard
+- GalleryCard
+- SectionHeading
+- ThemeToggle
+- APOD component
 
 Keep content/data separated from UI wherever practical.
 
 This is important because AAC members should be able to update:
 
-* events
-* blogs
-* projects
-* team
-* gallery
+- events
+- blogs
+- projects
+- team
+- gallery
 
 without rewriting the entire website.
 
@@ -1060,10 +1060,10 @@ Initially use local JSON/TypeScript data.
 
 Structure the application so it can later be migrated to:
 
-* Supabase
-* Sanity
-* Contentful
-* another CMS
+- Supabase
+- Sanity
+- Contentful
+- another CMS
 
 without redesigning the frontend.
 
@@ -1085,12 +1085,12 @@ Create a dedicated APOD service/component.
 
 Handle:
 
-* loading
-* success
-* API failure
-* video APOD
-* missing fields
-* rate limiting
+- loading
+- success
+- API failure
+- video APOD
+- missing fields
+- rate limiting
 
 Do not hardcode the current APOD.
 
@@ -1196,8 +1196,8 @@ Do not redesign or alter the official VNIT logo without permission.
 
 Leave a clearly marked placeholder for:
 
-* AAC logo
-* VNIT logo
+- AAC logo
+- VNIT logo
 
 so official assets can be inserted later.
 
@@ -1211,23 +1211,23 @@ Do NOT invent historical facts, awards, projects, events, people, achievements o
 
 Where actual information is unavailable:
 
-* use clearly marked placeholder content
-* make it easy to replace
-* do not present placeholders as facts
+- use clearly marked placeholder content
+- make it easy to replace
+- do not present placeholders as facts
 
 Use information from AAC's public presence as the factual basis.
 
 The website should be designed so that I can gradually provide you with:
 
-* actual team members
-* projects
-* event details
-* blog articles
-* gallery photographs
-* logo
-* exact club history
-* social links
-* additional sections
+- actual team members
+- projects
+- event details
+- blog articles
+- gallery photographs
+- logo
+- exact club history
+- social links
+- additional sections
 
 and you can replace the placeholders without redesigning the site.
 
@@ -1259,14 +1259,14 @@ However:
 
 Use the Instagram presence to understand:
 
-* the kind of events AAC conducts
-* visual identity
-* photography style
-* astronomy topics
-* activities
-* student engagement
-* recurring themes
-* overall personality of the club
+- the kind of events AAC conducts
+- visual identity
+- photography style
+- astronomy topics
+- activities
+- student engagement
+- recurring themes
+- overall personality of the club
 
 If Instagram data is inaccessible, do NOT fabricate it. Use the public AAC information available elsewhere and leave content placeholders where necessary.
 
@@ -1280,11 +1280,11 @@ The final website should feel like:
 
 It should be impressive enough that:
 
-* a VNIT fresher wants to join AAC,
-* an astronomy enthusiast takes the club seriously,
-* another college's astronomy club sees it as a benchmark,
-* a professor/researcher can comfortably browse it,
-* and an AAC member is proud to share the website.
+- a VNIT fresher wants to join AAC,
+- an astronomy enthusiast takes the club seriously,
+- another college's astronomy club sees it as a benchmark,
+- a professor/researcher can comfortably browse it,
+- and an AAC member is proud to share the website.
 
 It should balance:
 
@@ -1304,21 +1304,21 @@ Make it feel like **students genuinely exploring the universe.**
 
 Before considering the website complete:
 
-* check every navigation link
-* check mobile responsiveness
-* check dark/light mode
-* check APOD API
-* check loading states
-* check broken-image states
-* check forms
-* check hover states
-* check accessibility
-* check SEO metadata
-* check page transitions
-* check console for errors
-* check performance
-* check that placeholder content is clearly identifiable
-* ensure no fake AAC facts have been introduced
+- check every navigation link
+- check mobile responsiveness
+- check dark/light mode
+- check APOD API
+- check loading states
+- check broken-image states
+- check forms
+- check hover states
+- check accessibility
+- check SEO metadata
+- check page transitions
+- check console for errors
+- check performance
+- check that placeholder content is clearly identifiable
+- ensure no fake AAC facts have been introduced
 
 Build the website as a **real production-quality website**, not merely a visual mockup.
 

@@ -36,7 +36,10 @@ export function Footer() {
             <ul className="space-y-2.5 text-sm">
               {explore.map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Link
+                    to={l.to}
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
                     {l.label}
                   </Link>
                 </li>

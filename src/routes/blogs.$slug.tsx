@@ -1,7 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
-import { formatDate, PlaceholderTag, Tag } from "@/components/cards";
+import { PlaceholderTag, Tag } from "@/components/cards";
 import { blogs, getBlog } from "@/data/blogs";
+import { formatDate } from "@/lib/utils";
 
 export const Route = createFileRoute("/blogs/$slug")({
   loader: ({ params }) => {
@@ -11,7 +12,9 @@ export const Route = createFileRoute("/blogs/$slug")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Article not found — AAC" }, { name: "robots", content: "noindex" }] };
+      return {
+        meta: [{ title: "Article not found — AAC" }, { name: "robots", content: "noindex" }],
+      };
     }
     const { post } = loaderData;
     return {
@@ -49,7 +52,10 @@ function BlogDetail() {
   return (
     <article className="pt-28">
       <div className="mx-auto max-w-3xl px-5 py-12 lg:px-8">
-        <Link to="/blogs" className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm">
+        <Link
+          to="/blogs"
+          className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm"
+        >
           <ArrowLeft className="h-4 w-4" aria-hidden="true" /> All articles
         </Link>
 

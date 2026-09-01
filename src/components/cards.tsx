@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, CalendarDays, Clock, MapPin } from "lucide-react";
 import type { AacEvent, BlogPost, GalleryItem, Project, TeamMember } from "@/data/types";
-import { cn } from "@/lib/utils";
+import { cn, formatDate } from "@/lib/utils";
 
 export function PlaceholderTag({ className }: { className?: string }) {
   return (
@@ -25,13 +25,6 @@ export function Tag({ children }: { children: React.ReactNode }) {
   );
 }
 
-export const formatDate = (date: string) =>
-  new Date(`${date}T12:00:00Z`).toLocaleDateString("en-IN", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  });
-
 export function EventCard({ event }: { event: AacEvent }) {
   return (
     <article className="card-lift group border-border/70 bg-card/60 flex h-full flex-col overflow-hidden rounded-xl border">
@@ -52,7 +45,11 @@ export function EventCard({ event }: { event: AacEvent }) {
           {event.placeholder ? <PlaceholderTag /> : null}
         </div>
         <h3 className="font-display text-xl leading-snug font-semibold">
-          <Link to="/events/$slug" params={{ slug: event.slug }} className="hover:text-accent transition-colors">
+          <Link
+            to="/events/$slug"
+            params={{ slug: event.slug }}
+            className="hover:text-accent transition-colors"
+          >
             {event.title}
           </Link>
         </h3>
@@ -119,14 +116,23 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.placeholder ? <PlaceholderTag /> : null}
         </div>
         <h3 className="font-display text-xl leading-snug font-semibold">
-          <Link to="/projects/$slug" params={{ slug: project.slug }} className="hover:text-accent transition-colors">
+          <Link
+            to="/projects/$slug"
+            params={{ slug: project.slug }}
+            className="hover:text-accent transition-colors"
+          >
             {project.title}
           </Link>
         </h3>
-        <p className="text-muted-foreground mt-3 flex-1 text-sm leading-relaxed">{project.excerpt}</p>
+        <p className="text-muted-foreground mt-3 flex-1 text-sm leading-relaxed">
+          {project.excerpt}
+        </p>
         <ul className="mt-5 flex flex-wrap gap-1.5">
           {project.tools.slice(0, 4).map((t) => (
-            <li key={t} className="bg-secondary text-secondary-foreground rounded px-2 py-0.5 text-[11px]">
+            <li
+              key={t}
+              className="bg-secondary text-secondary-foreground rounded px-2 py-0.5 text-[11px]"
+            >
               {t}
             </li>
           ))}
@@ -163,7 +169,11 @@ export function BlogCard({ post }: { post: BlogPost }) {
           {post.placeholder ? <PlaceholderTag /> : null}
         </div>
         <h3 className="font-display text-xl leading-snug font-semibold">
-          <Link to="/blogs/$slug" params={{ slug: post.slug }} className="hover:text-accent transition-colors">
+          <Link
+            to="/blogs/$slug"
+            params={{ slug: post.slug }}
+            className="hover:text-accent transition-colors"
+          >
             {post.title}
           </Link>
         </h3>

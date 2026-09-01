@@ -1,7 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, CalendarDays, Clock, MapPin } from "lucide-react";
-import { formatDate, PlaceholderTag, Tag } from "@/components/cards";
+import { PlaceholderTag, Tag } from "@/components/cards";
 import { events, getEvent } from "@/data/events";
+import { formatDate } from "@/lib/utils";
 
 export const Route = createFileRoute("/events/$slug")({
   loader: ({ params }) => {
@@ -42,9 +43,16 @@ function EventDetail() {
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover opacity-30"
         />
-        <div aria-hidden="true" className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{ background: "var(--gradient-hero)" }}
+        />
         <div className="relative mx-auto max-w-4xl px-5 pt-12 pb-16 lg:px-8">
-          <Link to="/events" className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm">
+          <Link
+            to="/events"
+            className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm"
+          >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" /> All events
           </Link>
           <div className="mt-8 flex flex-wrap items-center gap-2">
