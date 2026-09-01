@@ -13,7 +13,10 @@ export function PageHeader({
 }) {
   return (
     <header className="border-border/60 relative overflow-hidden border-b pt-32 pb-16 sm:pt-40 sm:pb-20">
-      <div aria-hidden="true" className="starfield drift pointer-events-none absolute inset-0 opacity-40" />
+      <div
+        aria-hidden="true"
+        className="starfield drift pointer-events-none absolute inset-0 opacity-40"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.14] [background:radial-gradient(60%_60%_at_70%_0%,var(--color-accent),transparent)]"

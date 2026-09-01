@@ -101,12 +101,7 @@ export interface TeamMember {
   placeholder: boolean;
 }
 
-export type GalleryCategory =
-  | "Astrophotography"
-  | "Events"
-  | "Stargazing"
-  | "Projects"
-  | "Team";
+export type GalleryCategory = "Astrophotography" | "Events" | "Stargazing" | "Projects" | "Team";
 
 export interface GalleryItem {
   id: string;

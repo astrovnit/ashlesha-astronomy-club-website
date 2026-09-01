@@ -85,7 +85,8 @@ export const events: AacEvent[] = [
     date: "2026-02-08",
     time: "18:00 – 20:30 IST",
     venue: "Campus auditorium",
-    excerpt: "A team quiz across astronomy history, observational trivia and current space missions.",
+    excerpt:
+      "A team quiz across astronomy history, observational trivia and current space missions.",
     description: ["Placeholder description of the quiz format, rounds and prizes."],
     image: img.startrails,
     placeholder: true,
@@ -98,7 +99,8 @@ export const events: AacEvent[] = [
     date: "2025-12-14",
     time: "19:00 – 22:00 IST",
     venue: "To be confirmed",
-    excerpt: "Telescope viewing opened up for visitors, with volunteers explaining what is in the eyepiece.",
+    excerpt:
+      "Telescope viewing opened up for visitors, with volunteers explaining what is in the eyepiece.",
     description: ["Placeholder description of an outreach evening run by club volunteers."],
     image: img.simulation,
     placeholder: true,

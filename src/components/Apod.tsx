@@ -23,7 +23,10 @@ export function Apod() {
       aria-labelledby="apod-heading"
       className="border-border/60 bg-surface/40 relative overflow-hidden border-y py-20 sm:py-28"
     >
-      <div aria-hidden="true" className="grid-overlay pointer-events-none absolute inset-0 opacity-[0.18]" />
+      <div
+        aria-hidden="true"
+        className="grid-overlay pointer-events-none absolute inset-0 opacity-[0.18]"
+      />
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Live from NASA"
@@ -35,7 +38,11 @@ export function Apod() {
           <div className="border-border/70 bg-background/60 relative overflow-hidden rounded-xl border">
             <div className="aspect-16/10 w-full">
               {isPending ? (
-                <div className="bg-muted h-full w-full animate-pulse" aria-busy="true" aria-label="Loading NASA image" />
+                <div
+                  className="bg-muted h-full w-full animate-pulse"
+                  aria-busy="true"
+                  aria-label="Loading NASA image"
+                />
               ) : isError ? (
                 <div className="text-muted-foreground flex h-full w-full flex-col items-center justify-center gap-3 p-8 text-center text-sm">
                   <p>{(error as Error).message}</p>
