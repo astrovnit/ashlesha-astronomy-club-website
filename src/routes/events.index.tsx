@@ -1,11 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
-import { EventCard } from "@/components/cards";
-import { FilterBar } from "@/components/FilterBar";
+import { Sparkles } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
-import { eventCategories, events } from "@/data/events";
-import type { EventStatus } from "@/data/types";
 
 export const Route = createFileRoute("/events/")({
   head: () => ({
@@ -29,58 +25,40 @@ export const Route = createFileRoute("/events/")({
   component: EventsPage,
 });
 
-const groups: { key: EventStatus; label: string }[] = [
-  { key: "upcoming", label: "Upcoming" },
-  { key: "ongoing", label: "Ongoing" },
-  { key: "past", label: "Past" },
-];
-
 function EventsPage() {
-  const [category, setCategory] = useState("All");
-
-  const filtered = useMemo(
-    () => (category === "All" ? events : events.filter((e) => e.category === category)),
-    [category],
-  );
-
   return (
     <>
       <PageHeader
-        eyebrow="Events"
-        title="Nights out, talks in, and everything between."
-        description="Placeholder listings for now — real AAC events will replace them as the calendar is confirmed."
+        eyebrow="Events & Schedule"
+        title="Observation nights, talks & workshops."
+        description="Stay tuned for upcoming observation sessions, astrophysics lectures, and hands-on workshops."
       />
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-        <FilterBar
-          options={eventCategories}
-          value={category}
-          onChange={setCategory}
-          label="Filter events by category"
-        />
+        <Reveal>
+          <div className="border-border/70 bg-card/50 relative overflow-hidden rounded-2xl border p-12 text-center sm:p-16">
+            <div
+              aria-hidden="true"
+              className="border-accent/20 absolute top-1/2 left-1/2 -z-10 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed opacity-60"
+            />
+            <div
+              aria-hidden="true"
+              className="border-accent/10 absolute top-1/2 left-1/2 -z-10 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full border opacity-40"
+            />
 
-        {groups.map((g) => {
-          const items = filtered.filter((e) => e.status === g.key);
-          if (items.length === 0) return null;
-          return (
-            <div key={g.key} className="mt-16">
-              <h2 className="font-display border-border/60 border-b pb-4 text-2xl font-semibold">
-                {g.label}
-              </h2>
-              <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {items.map((e, i) => (
-                  <Reveal key={e.slug} delay={i * 60}>
-                    <EventCard event={e} />
-                  </Reveal>
-                ))}
-              </div>
+            <div className="border-accent/40 bg-secondary/80 text-accent mx-auto grid h-12 w-12 place-items-center rounded-full border shadow-sm">
+              <Sparkles className="h-5 w-5" aria-hidden="true" />
             </div>
-          );
-        })}
 
-        {filtered.length === 0 ? (
-          <p className="text-muted-foreground mt-16 text-sm">No events in this category yet.</p>
-        ) : null}
+            <h2 className="font-display mt-6 text-2xl font-semibold sm:text-3xl">
+              No events scheduled on the horizon yet.
+            </h2>
+            <p className="text-muted-foreground mx-auto mt-3 max-w-md text-base leading-relaxed">
+              The event calendar for the upcoming session is currently being finalized. Observation
+              nights, workshops, and guest talks will be posted here soon.
+            </p>
+          </div>
+        </Reveal>
       </section>
     </>
   );

@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
+import aacLogo from "@/assets/aac-logo.png";
 import { navLinks, site } from "@/data/site";
 import { cn } from "@/lib/utils";
 
@@ -40,23 +41,22 @@ export function Navbar() {
         )}
       >
         <Link to="/" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
-          {/* Placeholder mark — replace with the official AAC logo asset. */}
-          <span
-            aria-hidden="true"
-            className="border-accent/50 group-hover:border-accent relative grid h-9 w-9 place-items-center rounded-full border transition-colors"
-          >
-            <span className="bg-accent h-1.5 w-1.5 rounded-full" />
-            <span className="border-accent/30 absolute inset-1 rounded-full border border-dashed" />
-          </span>
+          <img
+            src={aacLogo}
+            alt="Ashlesha Astronomy Club logo"
+            className="h-10 w-10 shrink-0 rounded-full object-contain transition-transform duration-300 group-hover:scale-105"
+          />
           <span className="leading-tight">
-            <span className="font-display block text-sm font-semibold tracking-[0.28em]">AAC</span>
+            <span className="font-display block text-[17px] font-semibold tracking-[0.24em]">
+              AAC
+            </span>
             <span className="text-muted-foreground block text-[10px] tracking-[0.18em] uppercase">
               {site.instituteShort}
             </span>
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="hidden items-center gap-1.5 lg:flex">
           {navLinks.map((l) => (
             <li key={l.to}>
               <Link
@@ -64,7 +64,7 @@ export function Navbar() {
                 activeOptions={{ exact: l.to === "/" }}
                 activeProps={{ className: "text-foreground" }}
                 inactiveProps={{ className: "text-muted-foreground" }}
-                className="hover:text-foreground rounded-md px-3 py-2 text-sm transition-colors"
+                className="hover:text-foreground rounded-md px-2.5 py-1.5 text-[15px] font-medium transition-colors"
               >
                 {l.label}
               </Link>
@@ -74,12 +74,6 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Link
-            to="/contact"
-            className="border-accent/40 text-accent hover:bg-accent hover:text-accent-foreground hidden rounded-full border px-4 py-2 text-xs font-medium tracking-[0.14em] uppercase transition-colors sm:inline-flex"
-          >
-            Join AAC
-          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -115,15 +109,6 @@ export function Navbar() {
               </Link>
             </li>
           ))}
-          <li className="pt-6">
-            <Link
-              to="/contact"
-              onClick={() => setOpen(false)}
-              className="bg-primary text-primary-foreground block rounded-full px-5 py-3 text-center text-sm font-medium"
-            >
-              Join AAC
-            </Link>
-          </li>
         </ul>
       </div>
     </header>
