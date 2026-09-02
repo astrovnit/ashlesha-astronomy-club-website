@@ -12,14 +12,16 @@ export const site = {
   description:
     "Astronomy, astrophysics, cosmology, observational astronomy, astrophotography, research and space technology at VNIT Nagpur.",
   memberNickname: "Astrons",
-  email: "astronomyclub01vnit@gmail.com",
+  email: "astronomyclub@vnit.ac.in",
   location: "VNIT Nagpur, South Ambazari Road, Nagpur, Maharashtra 440010, India",
   mapQuery: "Visvesvaraya National Institute of Technology Nagpur",
   socials: [
     { label: "Instagram", href: "https://www.instagram.com/aac_vnit/" },
-    { label: "Linktree", href: "https://linktr.ee/aac_vnit" },
-    { label: "X", href: "https://linktr.ee/aac_vnit" },
-    { label: "Facebook", href: "https://linktr.ee/aac_vnit" },
+    { label: "Facebook", href: "https://www.facebook.com/AstroClubOfVnit" },
+    {
+      label: "Email",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=astronomyclub@vnit.ac.in",
+    },
   ],
 } as const;
 

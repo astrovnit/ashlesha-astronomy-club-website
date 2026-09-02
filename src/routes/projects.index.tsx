@@ -1,10 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
-import { ProjectCard } from "@/components/cards";
-import { FilterBar } from "@/components/FilterBar";
+import { Sparkles } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
-import { projectCategories, projects } from "@/data/projects";
 
 export const Route = createFileRoute("/projects/")({
   head: () => ({
@@ -29,63 +26,39 @@ export const Route = createFileRoute("/projects/")({
 });
 
 function ProjectsPage() {
-  const [category, setCategory] = useState("All");
-  const [query, setQuery] = useState("");
-
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    return projects.filter(
-      (p) =>
-        (category === "All" || p.category === category) &&
-        (q === "" ||
-          p.title.toLowerCase().includes(q) ||
-          p.excerpt.toLowerCase().includes(q) ||
-          p.tools.some((t) => t.toLowerCase().includes(q))),
-    );
-  }, [category, query]);
-
   return (
     <>
       <PageHeader
-        eyebrow="Projects"
-        title="Code, hardware, data and long nights of debugging."
-        description="Placeholder project records demonstrating the archive structure. Real AAC projects will replace them."
+        eyebrow="Projects & Research"
+        title="Code, instrumentation & space technology."
+        description="Explore the computational astronomy, data analysis, and hardware projects built by AAC members."
       />
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-        <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-          <FilterBar
-            options={projectCategories}
-            value={category}
-            onChange={setCategory}
-            label="Filter projects by category"
-          />
-          <div className="lg:w-72">
-            <label htmlFor="project-search" className="sr-only">
-              Search projects
-            </label>
-            <input
-              id="project-search"
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search projects or tools…"
-              className="border-border/70 bg-card/50 placeholder:text-muted-foreground w-full rounded-full border px-4 py-2.5 text-sm"
+        <Reveal>
+          <div className="border-border/70 bg-card/50 relative overflow-hidden rounded-2xl border p-12 text-center sm:p-16">
+            <div
+              aria-hidden="true"
+              className="border-accent/20 absolute top-1/2 left-1/2 -z-10 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed opacity-60"
             />
+            <div
+              aria-hidden="true"
+              className="border-accent/10 absolute top-1/2 left-1/2 -z-10 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full border opacity-40"
+            />
+
+            <div className="border-accent/40 bg-secondary/80 text-accent mx-auto grid h-12 w-12 place-items-center rounded-full border shadow-sm">
+              <Sparkles className="h-5 w-5" aria-hidden="true" />
+            </div>
+
+            <h2 className="font-display mt-6 text-2xl font-semibold sm:text-3xl">
+              Project archive in preparation.
+            </h2>
+            <p className="text-muted-foreground mx-auto mt-3 max-w-md text-base leading-relaxed">
+              AAC student projects in computational astronomy, rocket instrumentation, and orbital
+              simulations will be documented and published here.
+            </p>
           </div>
-        </div>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 60}>
-              <ProjectCard project={p} />
-            </Reveal>
-          ))}
-        </div>
-
-        {filtered.length === 0 ? (
-          <p className="text-muted-foreground mt-16 text-sm">No projects match that search yet.</p>
-        ) : null}
+        </Reveal>
       </section>
     </>
   );

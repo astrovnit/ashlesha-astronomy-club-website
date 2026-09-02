@@ -1,14 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronDown, Sparkles } from "lucide-react";
 import { Apod } from "@/components/Apod";
-import { BlogCard, EventCard, ProjectCard } from "@/components/cards";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { blogs } from "@/data/blogs";
-import { events } from "@/data/events";
-import { gallery } from "@/data/gallery";
 import { img } from "@/data/images";
-import { projects } from "@/data/projects";
 import { site } from "@/data/site";
 
 export const Route = createFileRoute("/")({
@@ -34,54 +29,7 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const pillars = [
-  {
-    key: "01",
-    title: "Observe",
-    body: "Telescope sessions, sky navigation and long observation nights.",
-  },
-  {
-    key: "02",
-    title: "Explore",
-    body: "Astrophysics, cosmology and the phenomena behind what we see.",
-  },
-  {
-    key: "03",
-    title: "Build",
-    body: "Amateur rocketry, instrumentation and space-technology projects.",
-  },
-  {
-    key: "04",
-    title: "Research",
-    body: "Computational astronomy and project work that goes past the syllabus.",
-  },
-  {
-    key: "05",
-    title: "Create",
-    body: "Astrophotography, writing and visual explanation of hard ideas.",
-  },
-  {
-    key: "06",
-    title: "Connect",
-    body: "Talks, workshops, outreach and a community that keeps asking why.",
-  },
-];
-
-const reasons = [
-  { title: "Learn", body: "Astronomy from fundamentals to advanced topics, at your own pace." },
-  { title: "Observe", body: "Handle telescopes and learn to actually find things in the sky." },
-  { title: "Build", body: "Work on rocketry and space-tech projects with people who finish them." },
-  { title: "Research", body: "Explore computational astronomy, astrophysics and cosmology." },
-  { title: "Create", body: "Develop astrophotography and scientific communication skills." },
-  { title: "Meet", body: "Find people who are as fascinated by the universe as you are." },
-];
-
 function Home() {
-  const upcoming = events.filter((e) => e.status !== "past").slice(0, 3);
-  const featured = projects.slice(0, 3);
-  const posts = blogs.slice(0, 3);
-  const shots = gallery.slice(0, 6);
-
   return (
     <>
       {/* HERO */}
@@ -114,8 +62,8 @@ function Home() {
           </Reveal>
           <Reveal delay={160}>
             <p className="text-muted-foreground mt-8 max-w-xl text-lg leading-relaxed">
-              {site.tagline} A student community at VNIT Nagpur that observes, questions, computes
-              and builds its way towards understanding the universe.
+              {site.tagline} A student community at VNIT Nagpur exploring the universe through
+              observation, curiosity, research, and making.
             </p>
           </Reveal>
           <Reveal delay={240}>
@@ -153,22 +101,16 @@ function Home() {
               Who we are
             </p>
             <h2 className="mt-5 text-3xl leading-tight font-semibold text-balance sm:text-4xl">
-              Astronomy at VNIT is not a spectator sport.
+              A community for everyone curious about the night sky.
             </h2>
           </Reveal>
           <Reveal delay={100}>
             <div className="text-muted-foreground space-y-5 text-base leading-relaxed">
               <p>
-                AAC is the astronomy club of VNIT Nagpur — a place for anyone curious about the
-                night sky, regardless of branch, year or prior experience. Overnight stargazing,
-                astrophysics discussions, cosmology reading groups, project work and space
-                exploration all sit under the same roof.
-              </p>
-              <p>
-                We think curiosity only becomes meaningful when you act on it. So members move from
-                looking up, to asking why, to observing carefully, to computing, building and
-                investigating. Some arrive knowing the constellations. Most arrive knowing nothing
-                at all. Both are the right starting point.
+                Ashlesha Astronomy Club (AAC) is the student astronomy community of VNIT Nagpur. We
+                bring together students across all disciplines to observe the night sky, learn
+                astrophysics, explore cosmology, and collaborate on hands-on space technology and
+                research projects.
               </p>
               <Link
                 to="/about"
@@ -181,168 +123,57 @@ function Home() {
         </div>
       </section>
 
-      {/* WHAT WE DO */}
-      <section className="border-border/60 bg-surface/40 border-y py-24">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <SectionHeading eyebrow="What we do" title="Six ways into the universe" />
-          <ul className="mt-14 grid gap-px sm:grid-cols-2 lg:grid-cols-3">
-            {pillars.map((p, i) => (
-              <Reveal as="li" key={p.key} delay={i * 60}>
-                <div className="group border-border/60 hover:bg-background/70 h-full border p-8 transition-colors">
-                  <span className="text-muted-foreground group-hover:text-accent font-mono text-xs tracking-[0.2em] transition-colors">
-                    {p.key}
-                  </span>
-                  <h3 className="font-display mt-6 text-2xl font-semibold">{p.title}</h3>
-                  <p className="text-muted-foreground mt-3 text-sm leading-relaxed">{p.body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* APOD */}
-      <Apod />
-
-      {/* EVENTS */}
-      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-        <SectionHeading
-          eyebrow="What's next"
-          title="Upcoming events"
-          description="Observation nights, workshops and talks. Placeholder listings until the semester calendar is confirmed."
-          action={
-            <Link
-              to="/events"
-              className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline"
-            >
-              View all events <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          }
+      {/* WHAT'S NEW (EMPTY STATE) */}
+      <section className="border-border/60 bg-surface/40 relative overflow-hidden border-y py-24">
+        <div
+          aria-hidden="true"
+          className="starfield drift pointer-events-none absolute inset-0 opacity-25"
         />
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {upcoming.map((e, i) => (
-            <Reveal key={e.slug} delay={i * 80}>
-              <EventCard event={e} />
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* PROJECTS */}
-      <section className="border-border/60 bg-surface/40 border-y py-24">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
           <SectionHeading
-            eyebrow="Build & research"
-            title="Featured projects"
-            description="Astronomy here includes code, hardware and data — not only eyepieces."
-            action={
-              <Link
-                to="/projects"
-                className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline"
-              >
-                Explore all projects <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            }
+            eyebrow="What's happening"
+            title="What's New"
+            description="Observation session announcements, talks, and club updates."
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {featured.map((p, i) => (
-              <Reveal key={p.slug} delay={i * 80}>
-                <ProjectCard project={p} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* GALLERY PREVIEW */}
-      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-        <SectionHeading
-          eyebrow="Archive"
-          title="From the gallery"
-          action={
-            <Link
-              to="/gallery"
-              className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline"
-            >
-              Open the gallery <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          }
-        />
-        <div className="mt-12 grid auto-rows-[180px] grid-cols-2 gap-3 sm:auto-rows-[220px] lg:grid-cols-4">
-          {shots.map((g, i) => (
-            <Reveal
-              key={g.id}
-              delay={i * 60}
-              className={i === 0 ? "col-span-2 row-span-2" : i === 3 ? "lg:col-span-2" : ""}
-            >
-              <Link
-                to="/gallery"
-                className="group border-border/70 block h-full w-full overflow-hidden rounded-lg border"
-              >
-                <img
-                  src={g.image}
-                  alt={g.description}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+          <Reveal delay={100} className="mt-12">
+            <div className="border-border/70 bg-card/50 relative overflow-hidden rounded-2xl border p-12 text-center sm:p-16">
+              {/* Subtle orbital ring visual decoration */}
+              <div
+                aria-hidden="true"
+                className="border-accent/20 absolute top-1/2 left-1/2 -z-10 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed opacity-60"
+              />
+              <div
+                aria-hidden="true"
+                className="border-accent/10 absolute top-1/2 left-1/2 -z-10 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full border opacity-40"
+              />
 
-      {/* BLOGS */}
-      <section className="border-border/60 bg-surface/40 border-y py-24">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <SectionHeading
-            eyebrow="Writing"
-            title="From the notebook"
-            description="Explainers, guides and research notes written by members."
-            action={
-              <Link
-                to="/blogs"
-                className="text-accent inline-flex items-center gap-1.5 text-sm hover:underline"
-              >
-                All articles <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            }
-          />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {posts.map((b, i) => (
-              <Reveal key={b.slug} delay={i * 80}>
-                <BlogCard post={b} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY JOIN */}
-      <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-        <SectionHeading
-          eyebrow="Why join"
-          title={`Six reasons to become an ${site.memberNickname.slice(0, -1)}`}
-        />
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {reasons.map((r, i) => (
-            <Reveal key={r.title} delay={i * 60}>
-              <div className="border-accent/40 border-l pl-5">
-                <h3 className="font-display text-lg font-semibold">{r.title}</h3>
-                <p className="text-muted-foreground mt-2 text-sm leading-relaxed">{r.body}</p>
+              <div className="border-accent/40 bg-secondary/80 text-accent mx-auto grid h-12 w-12 place-items-center rounded-full border shadow-sm">
+                <Sparkles className="h-5 w-5" aria-hidden="true" />
               </div>
-            </Reveal>
-          ))}
+
+              <h3 className="font-display mt-6 text-2xl font-semibold sm:text-3xl">
+                The sky is quiet for now.
+              </h3>
+              <p className="text-muted-foreground mx-auto mt-3 max-w-md text-base leading-relaxed">
+                No events or announcements on the horizon right now. Upcoming observation sessions,
+                workshops, and news will appear here soon.
+              </p>
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                <Link
+                  to="/events"
+                  className="border-border/80 text-muted-foreground hover:border-accent hover:text-foreground inline-flex items-center gap-1.5 rounded-full border px-5 py-2 text-xs font-medium transition-colors"
+                >
+                  Browse Past Events <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+          </Reveal>
         </div>
-        <Reveal delay={200}>
-          <Link
-            to="/contact"
-            className="border-accent/50 text-accent hover:bg-accent hover:text-accent-foreground mt-12 inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-medium transition-colors"
-          >
-            Join the {site.memberNickname} <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-        </Reveal>
       </section>
+
+      {/* NASA APOD */}
+      <Apod />
 
       {/* CTA + SOCIAL */}
       <section className="relative overflow-hidden">

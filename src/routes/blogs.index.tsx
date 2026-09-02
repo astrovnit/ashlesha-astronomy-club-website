@@ -1,10 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
-import { BlogCard } from "@/components/cards";
-import { FilterBar } from "@/components/FilterBar";
+import { Sparkles } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
-import { blogCategories, blogs } from "@/data/blogs";
 
 export const Route = createFileRoute("/blogs/")({
   head: () => ({
@@ -29,37 +26,39 @@ export const Route = createFileRoute("/blogs/")({
 });
 
 function BlogsPage() {
-  const [category, setCategory] = useState("All");
-  const filtered = useMemo(
-    () => (category === "All" ? blogs : blogs.filter((b) => b.category === category)),
-    [category],
-  );
-
   return (
     <>
       <PageHeader
-        eyebrow="Writing"
-        title="Notes from people working things out."
-        description="A scientific-magazine style archive of explainers, guides and research notes. Placeholder articles for now."
+        eyebrow="Writing & Articles"
+        title="Notes from the astronomical notebook."
+        description="Explainers, astrophysics guides, and observational notes written by AAC members."
       />
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-        <FilterBar
-          options={blogCategories}
-          value={category}
-          onChange={setCategory}
-          label="Filter articles by category"
-        />
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((b, i) => (
-            <Reveal key={b.slug} delay={i * 60}>
-              <BlogCard post={b} />
-            </Reveal>
-          ))}
-        </div>
-        {filtered.length === 0 ? (
-          <p className="text-muted-foreground mt-16 text-sm">No articles in this category yet.</p>
-        ) : null}
+        <Reveal>
+          <div className="border-border/70 bg-card/50 relative overflow-hidden rounded-2xl border p-12 text-center sm:p-16">
+            <div
+              aria-hidden="true"
+              className="border-accent/20 absolute top-1/2 left-1/2 -z-10 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed opacity-60"
+            />
+            <div
+              aria-hidden="true"
+              className="border-accent/10 absolute top-1/2 left-1/2 -z-10 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full border opacity-40"
+            />
+
+            <div className="border-accent/40 bg-secondary/80 text-accent mx-auto grid h-12 w-12 place-items-center rounded-full border shadow-sm">
+              <Sparkles className="h-5 w-5" aria-hidden="true" />
+            </div>
+
+            <h2 className="font-display mt-6 text-2xl font-semibold sm:text-3xl">
+              Articles in preparation.
+            </h2>
+            <p className="text-muted-foreground mx-auto mt-3 max-w-md text-base leading-relaxed">
+              No published articles yet. Astronomical explainers, observational guides, and club
+              notes will be published here soon.
+            </p>
+          </div>
+        </Reveal>
       </section>
     </>
   );
