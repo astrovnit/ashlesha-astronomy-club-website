@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { User } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/data/site";
@@ -13,15 +12,15 @@ import {
 export const Route = createFileRoute("/team")({
   head: () => ({
     meta: [
-      { title: "Team — AAC, VNIT Nagpur" },
+      { title: "Core Committee — AAC, VNIT Nagpur" },
       {
         name: "description",
         content: `Meet the Core Committee 2026–27 of ${site.name}, ${site.instituteShort}.`,
       },
-      { property: "og:title", content: "Team — AAC, VNIT Nagpur" },
+      { property: "og:title", content: "Core Committee — AAC, VNIT Nagpur" },
       {
         property: "og:description",
-        content: `Core Committee 2026–27 of ${site.name}, ${site.instituteShort}.`,
+        content: `The student leadership of ${site.name}, ${site.instituteShort}.`,
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/team" },
@@ -31,149 +30,157 @@ export const Route = createFileRoute("/team")({
   component: TeamPage,
 });
 
-function MemberCard({
-  member,
-  size = "normal",
-}: {
-  member: CoreMember;
-  size?: "large" | "medium" | "normal";
-}) {
-  const getInitials = (name: string) =>
-    name
-      .split(" ")
-      .map((n) => n[0])
-      .join("")
-      .substring(0, 2)
-      .toUpperCase();
-
-  const isLarge = size === "large";
-  const isMedium = size === "medium";
-
+function MemberShowcase({ member, priority = false }: { member: CoreMember; priority?: boolean }) {
   return (
-    <article
-      className={`card-lift relative flex flex-col items-center overflow-hidden rounded-2xl text-center backdrop-blur-xl transition-all duration-300 ${
-        isLarge
-          ? "border-accent/40 bg-card/80 p-8 shadow-lg hover:border-accent/70"
-          : isMedium
-            ? "border-accent/30 bg-card/70 p-7 hover:border-accent/60"
-            : "border-border/70 bg-card/60 p-6 hover:border-accent/50"
-      }`}
-    >
-      {/* Photo / Portrait Placeholder Slot */}
+    <figure className="group flex flex-col items-center text-center">
+      {/* Large Portrait Photograph */}
       <div
-        className={`relative grid place-items-center rounded-full transition-transform duration-300 group-hover:scale-105 ${
-          isLarge
-            ? "border-accent/50 bg-secondary/90 text-accent h-28 w-28 border-2 shadow-md"
-            : isMedium
-              ? "border-accent/40 bg-secondary/80 text-accent h-24 w-24 border-2"
-              : "border-border/80 bg-secondary/70 text-muted-foreground h-20 w-20 border"
+        className={`relative w-full overflow-hidden rounded-2xl border border-border/60 bg-secondary/30 shadow-2xl transition-all duration-700 ease-out group-hover:border-accent/40 group-hover:shadow-[0_0_30px_rgba(56,189,248,0.12)] ${
+          priority ? "aspect-[3/4] max-w-sm sm:max-w-md" : "aspect-[3/4] max-w-xs sm:max-w-sm"
         }`}
       >
-        {member.photoUrl ? (
-          <img
-            src={member.photoUrl}
-            alt={member.name}
-            className="h-full w-full rounded-full object-cover"
-          />
-        ) : (
-          <div className="flex flex-col items-center justify-center">
-            <span className="font-display font-semibold tracking-wider text-xs sm:text-sm">
-              {getInitials(member.name)}
-            </span>
-            <User className="mt-0.5 h-3.5 w-3.5 opacity-60" aria-hidden="true" />
-          </div>
-        )}
+        <img
+          src={member.photo}
+          alt={member.name}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          style={{ objectPosition: member.objectPosition || "center" }}
+        />
+        {/* Subtle bottom vignette to ground the portrait */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background/70 via-background/20 to-transparent" />
       </div>
 
-      <h3
-        className={`font-display font-semibold tracking-tight ${
-          isLarge ? "mt-5 text-2xl" : isMedium ? "mt-4 text-xl" : "mt-4 text-lg"
-        }`}
-      >
-        {member.name}
-      </h3>
-      <p
-        className={`text-accent font-medium ${
-          isLarge ? "mt-1.5 text-base sm:text-lg" : "mt-1 text-sm sm:text-base"
-        }`}
-      >
-        {member.role}
-      </p>
-    </article>
+      {/* Editorial Typography */}
+      <figcaption className="mt-5 flex flex-col items-center">
+        <h3
+          className={`font-display font-semibold tracking-tight text-foreground transition-colors duration-300 group-hover:text-accent ${
+            priority ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"
+          }`}
+        >
+          {member.name}
+        </h3>
+
+        <p
+          className={`text-accent font-medium tracking-wide ${
+            priority ? "mt-1.5 text-base sm:text-lg" : "mt-1 text-sm sm:text-base"
+          }`}
+        >
+          {member.role}
+        </p>
+
+        <p className="text-muted-foreground/80 mt-2.5 max-w-xs text-balance italic leading-relaxed text-xs sm:text-sm">
+          {member.tagline}
+        </p>
+      </figcaption>
+    </figure>
   );
 }
 
 function TeamPage() {
   return (
-    <>
+    <div className="relative min-h-screen">
+      {/* Full-Page Dark Astronomy & Starry Universe Background */}
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        {/* Soft celestial radial glows */}
+        <div className="absolute -top-40 left-1/2 h-[700px] w-[1000px] -translate-x-1/2 bg-gradient-to-b from-accent/10 via-indigo-950/15 to-transparent blur-3xl opacity-60" />
+        <div className="absolute top-1/2 right-0 h-[600px] w-[600px] -translate-y-1/2 bg-gradient-to-bl from-accent/5 via-sky-950/10 to-transparent blur-3xl opacity-40" />
+        <div className="absolute bottom-0 left-0 h-[600px] w-[600px] bg-gradient-to-tr from-accent/5 via-indigo-950/10 to-transparent blur-3xl opacity-40" />
+
+        {/* Ambient starfield drift */}
+        <div className="starfield drift absolute inset-0 opacity-30" />
+      </div>
+
       <PageHeader
         eyebrow="Core Committee 2026–27"
-        title="The Core Committee"
-        description={`Executive leadership, research leads, and committee heads driving ${site.name} at ${site.instituteShort}.`}
+        title="The People Behind the Telescopes."
+        description={`The student committee driving astronomy, astrophysics research, space technology, and observational stargazing at ${site.instituteShort}.`}
       />
 
-      <div className="relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="starfield drift pointer-events-none absolute inset-0 opacity-25"
-        />
-
-        <section className="relative mx-auto max-w-7xl px-5 py-16 lg:px-8 space-y-20">
-          {/* LEVEL 1 — Executive Leadership (President & Vice-President) */}
-          <div className="mx-auto max-w-3xl">
-            <Reveal>
-              <div className="mb-8 text-center">
-                <span className="border-accent/30 bg-accent/10 text-accent rounded-full border px-4 py-1.5 font-mono text-xs tracking-widest uppercase">
-                  Executive Leadership
-                </span>
-              </div>
-            </Reveal>
-            <div className="grid gap-6 sm:grid-cols-2">
-              {executiveLeadership.map((member, i) => (
-                <Reveal key={member.id} delay={i * 80}>
-                  <MemberCard member={member} size="large" />
-                </Reveal>
-              ))}
+      <div className="relative mx-auto max-w-7xl px-5 py-16 lg:px-8 space-y-32 sm:space-y-40 pb-36">
+        {/* ========================================================= */}
+        {/* LEVEL 1 — EXECUTIVE LEADERSHIP (President & Vice-President) */}
+        {/* ========================================================= */}
+        <section aria-labelledby="executive-heading">
+          <Reveal>
+            <div className="mb-14 flex flex-col items-center text-center">
+              <span className="border-accent/40 bg-accent/10 text-accent rounded-full border px-4 py-1 font-mono text-[11px] tracking-[0.22em] uppercase">
+                Executive Leadership
+              </span>
+              <h2
+                id="executive-heading"
+                className="font-display mt-3 text-2xl font-semibold tracking-tight sm:text-3xl text-balance"
+              >
+                President & Vice-President
+              </h2>
+              <div className="bg-accent/30 mt-4 h-px w-16" aria-hidden="true" />
             </div>
+          </Reveal>
+
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 sm:grid-cols-2 lg:gap-16 justify-items-center">
+            {executiveLeadership.map((member, i) => (
+              <Reveal key={member.id} delay={i * 100} className="w-full">
+                <MemberShowcase member={member} priority />
+              </Reveal>
+            ))}
           </div>
+        </section>
 
-          {/* LEVEL 2 — Research Leadership (Heads of Research) */}
-          <div className="mx-auto max-w-3xl">
-            <Reveal>
-              <div className="mb-8 text-center">
-                <span className="border-accent/30 bg-accent/10 text-accent rounded-full border px-4 py-1.5 font-mono text-xs tracking-widest uppercase">
-                  Research Leadership
-                </span>
-              </div>
-            </Reveal>
-            <div className="grid gap-6 sm:grid-cols-2">
-              {researchLeadership.map((member, i) => (
-                <Reveal key={member.id} delay={i * 80}>
-                  <MemberCard member={member} size="medium" />
-                </Reveal>
-              ))}
+        {/* ========================================================= */}
+        {/* LEVEL 2 — RESEARCH LEADERSHIP (Heads of Research)         */}
+        {/* ========================================================= */}
+        <section aria-labelledby="research-heading">
+          <Reveal>
+            <div className="mb-14 flex flex-col items-center text-center">
+              <span className="border-accent/40 bg-accent/10 text-accent rounded-full border px-4 py-1 font-mono text-[11px] tracking-[0.22em] uppercase">
+                Research Leadership
+              </span>
+              <h2
+                id="research-heading"
+                className="font-display mt-3 text-2xl font-semibold tracking-tight sm:text-3xl text-balance"
+              >
+                Heads of Research
+              </h2>
+              <div className="bg-accent/30 mt-4 h-px w-16" aria-hidden="true" />
             </div>
+          </Reveal>
+
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 sm:grid-cols-2 lg:gap-16 justify-items-center">
+            {researchLeadership.map((member, i) => (
+              <Reveal key={member.id} delay={i * 100} className="w-full">
+                <MemberShowcase member={member} priority />
+              </Reveal>
+            ))}
           </div>
+        </section>
 
-          {/* LEVEL 3 — Committee Heads */}
-          <div className="mx-auto max-w-6xl">
-            <Reveal>
-              <div className="mb-8 text-center">
-                <span className="border-border/70 bg-secondary/60 text-muted-foreground rounded-full border px-4 py-1.5 font-mono text-xs tracking-widest uppercase">
-                  Committee Heads
-                </span>
-              </div>
-            </Reveal>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {committeeHeads.map((member, i) => (
-                <Reveal key={member.id} delay={i * 60}>
-                  <MemberCard member={member} size="normal" />
-                </Reveal>
-              ))}
+        {/* ========================================================= */}
+        {/* LEVEL 3 — COMMITTEE HEADS (6 Heads Grid)                   */}
+        {/* ========================================================= */}
+        <section aria-labelledby="committee-heading">
+          <Reveal>
+            <div className="mb-14 flex flex-col items-center text-center">
+              <span className="border-border/70 bg-secondary/50 text-muted-foreground rounded-full border px-4 py-1 font-mono text-[11px] tracking-[0.22em] uppercase">
+                Committee Heads
+              </span>
+              <h2
+                id="committee-heading"
+                className="font-display mt-3 text-2xl font-semibold tracking-tight sm:text-3xl text-balance"
+              >
+                Domain & Technical Leads
+              </h2>
+              <div className="bg-border/60 mt-4 h-px w-16" aria-hidden="true" />
             </div>
+          </Reveal>
+
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12 justify-items-center">
+            {committeeHeads.map((member, i) => (
+              <Reveal key={member.id} delay={i * 70} className="w-full">
+                <MemberShowcase member={member} />
+              </Reveal>
+            ))}
           </div>
         </section>
       </div>
-    </>
+    </div>
   );
 }
