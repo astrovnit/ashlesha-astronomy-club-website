@@ -4,9 +4,11 @@ import dishaPhoto from "@/assets/team/disha.jpeg";
 import ganeshPhoto from "@/assets/team/ganesh.jpeg";
 import moulikPhoto from "@/assets/team/moulik.jpeg";
 import mrunalPhoto from "@/assets/team/mrunal.jpeg";
+import ramakarthikPhoto from "@/assets/team/ramakarthik.jpeg";
 import rishitPhoto from "@/assets/team/rishit.jpeg";
 import shravanPhoto from "@/assets/team/shravan.jpeg";
 import shreyashPhoto from "@/assets/team/shreyash.jpeg";
+import vpsinghPhoto from "@/assets/team/vpsingh.jpeg";
 import yasholaxmiPhoto from "@/assets/team/yasholaxmi.jpeg";
 
 export type CoreMember = {
@@ -17,6 +19,27 @@ export type CoreMember = {
   photo: string;
   objectPosition?: string;
 };
+
+export const facultyIncharges: CoreMember[] = [
+  {
+    id: "fac-1",
+    name: "Dr. M. S. Ramkarthik",
+    role: "Faculty Incharge",
+    tagline:
+      "With expertise in Quantum Theory, Quantum Computing, Mathematical Physics, and Many-Body Physics, he brings a deep theoretical perspective to our exploration of the universe. His research reflects the fascinating intersection of mathematics, computation, and the fundamental laws of nature.",
+    photo: ramakarthikPhoto,
+    objectPosition: "center",
+  },
+  {
+    id: "fac-2",
+    name: "Dr. Vishnu Pratap Singh",
+    role: "Faculty Incharge",
+    tagline:
+      "His research focuses on Optimization under Uncertainty and Operations Research, exploring mathematical methods for solving complex problems under real-world constraints. He brings a rigorous analytical perspective to our club's scientific endeavors.",
+    photo: vpsinghPhoto,
+    objectPosition: "center",
+  },
+];
 
 export const executiveLeadership: CoreMember[] = [
   {

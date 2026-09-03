@@ -5,6 +5,7 @@ import { site } from "@/data/site";
 import {
   committeeHeads,
   executiveLeadership,
+  facultyIncharges,
   researchLeadership,
   type CoreMember,
 } from "@/data/team";
@@ -12,15 +13,15 @@ import {
 export const Route = createFileRoute("/team")({
   head: () => ({
     meta: [
-      { title: "Core Committee — AAC, VNIT Nagpur" },
+      { title: "Team — AAC, VNIT Nagpur" },
       {
         name: "description",
-        content: `Meet the Core Committee 2026–27 of ${site.name}, ${site.instituteShort}.`,
+        content: `Meet the Faculty Incharges and Core Committee 2026–27 of ${site.name}, ${site.instituteShort}.`,
       },
-      { property: "og:title", content: "Core Committee — AAC, VNIT Nagpur" },
+      { property: "og:title", content: "Team — AAC, VNIT Nagpur" },
       {
         property: "og:description",
-        content: `The student leadership of ${site.name}, ${site.instituteShort}.`,
+        content: `Faculty Incharges and Core Committee 2026–27 of ${site.name}, ${site.instituteShort}.`,
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/team" },
@@ -68,9 +69,11 @@ function MemberShowcase({ member, priority = false }: { member: CoreMember; prio
           {member.role}
         </p>
 
-        <p className="text-muted-foreground/80 mt-2.5 max-w-xs text-balance italic leading-relaxed text-xs sm:text-sm">
-          {member.tagline}
-        </p>
+        {member.tagline ? (
+          <p className="text-muted-foreground/80 mt-2.5 max-w-xs text-balance italic leading-relaxed text-xs sm:text-sm">
+            {member.tagline}
+          </p>
+        ) : null}
       </figcaption>
     </figure>
   );
@@ -98,7 +101,35 @@ function TeamPage() {
 
       <div className="relative mx-auto max-w-7xl px-5 py-16 lg:px-8 space-y-32 sm:space-y-40 pb-36">
         {/* ========================================================= */}
-        {/* LEVEL 1 — EXECUTIVE LEADERSHIP (President & Vice-President) */}
+        {/* 1. FACULTY INCHARGES                                      */}
+        {/* ========================================================= */}
+        <section aria-labelledby="faculty-heading">
+          <Reveal>
+            <div className="mb-14 flex flex-col items-center text-center">
+              <span className="border-accent/40 bg-accent/10 text-accent rounded-full border px-4 py-1 font-mono text-[11px] tracking-[0.22em] uppercase">
+                Faculty Advisors
+              </span>
+              <h2
+                id="faculty-heading"
+                className="font-display mt-3 text-2xl font-semibold tracking-tight sm:text-3xl text-balance"
+              >
+                Faculty Incharges
+              </h2>
+              <div className="bg-accent/30 mt-4 h-px w-16" aria-hidden="true" />
+            </div>
+          </Reveal>
+
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-12 sm:grid-cols-2 lg:gap-16 justify-items-center">
+            {facultyIncharges.map((member, i) => (
+              <Reveal key={member.id} delay={i * 100} className="w-full">
+                <MemberShowcase member={member} priority />
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        {/* ========================================================= */}
+        {/* 2. PRESIDENT & VICE-PRESIDENT                             */}
         {/* ========================================================= */}
         <section aria-labelledby="executive-heading">
           <Reveal>
@@ -126,7 +157,7 @@ function TeamPage() {
         </section>
 
         {/* ========================================================= */}
-        {/* LEVEL 2 — RESEARCH LEADERSHIP (Heads of Research)         */}
+        {/* 3. HEADS OF RESEARCH                                      */}
         {/* ========================================================= */}
         <section aria-labelledby="research-heading">
           <Reveal>
@@ -154,7 +185,7 @@ function TeamPage() {
         </section>
 
         {/* ========================================================= */}
-        {/* LEVEL 3 — COMMITTEE HEADS (6 Heads Grid)                   */}
+        {/* 4. DOMAIN & TECHNICAL LEADS                               */}
         {/* ========================================================= */}
         <section aria-labelledby="committee-heading">
           <Reveal>
